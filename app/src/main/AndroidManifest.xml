@@ -16,7 +16,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBFjK8UInAeNGfhx8attCH8UNY6xzNjuwU" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:label="Trung Tâm Hiến Máu Nhân Đạo Tp.HCM"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -25,6 +25,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"
+            android:label="Trung Tâm Hiến Máu Nhân Đạo Tp.HCM"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
     </application>
 
