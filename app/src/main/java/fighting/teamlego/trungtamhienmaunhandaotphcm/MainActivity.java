@@ -1,6 +1,8 @@
 package fighting.teamlego.trungtamhienmaunhandaotphcm;
-
+import android.content.ClipData;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v4.app.FragmentManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -11,7 +13,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.CheckBox;
 
+import java.io.IOException;
 import fighting.teamlego.trungtamhienmaunhandaotphcm.Menu.CuocThiSangTac_Fragment;
 import fighting.teamlego.trungtamhienmaunhandaotphcm.Menu.DangKiHienMau_Fragment;
 import fighting.teamlego.trungtamhienmaunhandaotphcm.Menu.GuongHienMau_Fragment;
@@ -26,7 +30,8 @@ import fighting.teamlego.trungtamhienmaunhandaotphcm.Menu.ThongTin_Fragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    MediaPlayer nhacnen = new MediaPlayer();
+    CountDownTimer phatlainhac;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +51,22 @@ public class MainActivity extends AppCompatActivity
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.content_main, homeFragment, homeFragment.getTag()).commit();
 
-        //New
+        nhacnen = MediaPlayer.create(MainActivity.this, R.raw.nhacnen);
+        nhacnen.start();
+//
+        phatlainhac = new CountDownTimer(1000 * 216, 1000) {
+            @Override
+            public void onTick(long m) {
+            }
+
+            @Override
+            public void onFinish() {
+                nhacnen.start();
+                phatlainhac.cancel();
+                phatlainhac.start();
+            }
+        };
+        phatlainhac.start();
     }
 
     @Override
@@ -86,12 +106,26 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+            if (id == R.id.action_sound) {
+                if(item.isChecked() == true)
+                {
+                    nhacnen.pause();
+                    phatlainhac.cancel();
+                    item.setChecked(false);
+                    item.setIcon(R.drawable.tatloa);
+                }
+                else
+                {
+                    nhacnen.start();
+                    phatlainhac.start();
+                    item.setChecked(true);
+                    item.setIcon(R.drawable.batloa);
+                }
+                return true;
+            }
 
-        return super.onOptionsItemSelected(item);
-    }
+            return super.onOptionsItemSelected(item);
+        }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
