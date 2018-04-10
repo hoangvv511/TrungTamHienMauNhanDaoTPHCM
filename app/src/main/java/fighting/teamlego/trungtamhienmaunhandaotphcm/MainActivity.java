@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity
 
         nhacnen = MediaPlayer.create(MainActivity.this, R.raw.nhacnen);
         nhacnen.start();
-
+//
         phatlainhac = new CountDownTimer(1000 * 216, 1000) {
             @Override
             public void onTick(long m) {
