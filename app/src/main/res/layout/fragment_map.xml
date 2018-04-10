@@ -1,0 +1,173 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="fighting.teamlego.trungtamhienmaunhandaotphcm.MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"  >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout_diachi"
+            android:layout_width="385dp"
+            android:layout_height="47dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/etOrigin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:hint="Enter origin address"
+                    map:layout_constraintEnd_toEndOf="parent"
+                    map:layout_constraintStart_toStartOf="parent"
+                    map:layout_constraintTop_toTopOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            map:layout_constraintBottom_toBottomOf="parent"
+            map:layout_constraintEnd_toEndOf="parent"
+            map:layout_constraintStart_toStartOf="parent"
+            map:layout_constraintTop_toBottomOf="@+id/textInputLayout_diachi">
+
+            <TextView
+                android:id="@+id/etDestination"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:layout_marginStart="5dp"
+                android:gravity="bottom"
+                android:text="Trung tâm hiến máu nhân đạo Tp.HCM"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                map:layout_constraintBottom_toBottomOf="parent"
+                map:layout_constraintEnd_toEndOf="parent"
+                map:layout_constraintHorizontal_bias="0.0"
+                map:layout_constraintStart_toEndOf="@+id/imageView8"
+                map:layout_constraintTop_toBottomOf="@+id/etOrigin"
+                map:layout_constraintVertical_bias="0.17" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/downright"
+                map:layout_constraintBottom_toBottomOf="parent"
+                map:layout_constraintStart_toStartOf="parent"
+                map:layout_constraintTop_toBottomOf="@+id/textInputLayout_diachi" />
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btnFindPath"
+            style="@android:style/Widget.Material.Light.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Find path"
+            android:textColor="#FFF"
+            map:layout_constraintBottom_toBottomOf="parent"
+            map:layout_constraintStart_toStartOf="parent"
+            map:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_distance"
+            map:layout_constraintBottom_toBottomOf="parent"
+            map:layout_constraintStart_toEndOf="@+id/btnFindPath"
+            map:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:text="0 km"
+            map:layout_constraintBottom_toBottomOf="parent"
+            map:layout_constraintStart_toEndOf="@+id/imageView10"
+            map:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_clock"
+            map:layout_constraintBottom_toBottomOf="parent"
+            map:layout_constraintStart_toEndOf="@+id/tvDistance"
+            map:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:text="0 min"
+            map:layout_constraintBottom_toBottomOf="parent"
+            map:layout_constraintStart_toEndOf="@+id/imageView9"
+            map:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_getposition"
+            style="@android:style/Widget.Material.Light.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="POSITION"
+            android:textColor="#FFF"
+            map:layout_constraintBottom_toBottomOf="parent"
+            map:layout_constraintEnd_toEndOf="parent"
+            map:layout_constraintStart_toEndOf="@+id/tvDuration"
+            map:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home"
+        android:title="Trang chủ" />
+    </group>
+
+    <item android:title="Hoạt động">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_sukien"
+                    android:icon="@drawable/newspaper"
+                    android:title="Sự kiện" />
+                <item
+                    android:id="@+id/nav_thongbaohienmau"
+                    android:icon="@drawable/heartbeat"
+                    android:title="Thông báo hiến máu" />
+                <item
+                    android:id="@+id/nav_guonghienmau"
+                    android:icon="@drawable/user"
+                    android:title="Gương hiến máu tiêu biểu" />
+                <item
+                    android:id="@+id/nav_hoatdongCLB"
+                    android:icon="@drawable/bicycle"
+                    android:title="Hoạt động CLB" />
+                <item
+                    android:id="@+id/nav_cuocthi"
+                    android:icon="@drawable/contest"
+                    android:title="Cuộc thi sáng tác : Hiến máu nhân đạo trong tôi" />
+                <item
+                android:id="@+id/nav_hoidap"
+                android:icon="@drawable/chat"
+                android:title="Hỏi đáp" />
+                <item
+                    android:id="@+id/nav_nhommauvasuckhoe"
+                    android:icon="@drawable/charity"
+                    android:title="Nhóm máu và sức khỏe" />
+                <item
+                    android:id="@+id/nav_dangkihienmau"
+                    android:icon="@drawable/tag"
+                    android:title="Đăng kí hiến máu" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Thông tin">
+        <menu>
+            <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/nav_infor"
+                android:icon="@drawable/information"
+                android:title="Thông tin" />
+            <item
+                android:id="@+id/nav_contact"
+                android:icon="@drawable/email"
+                android:title="Liên hệ" />
+            </group>
+        </menu>
+    </item>
+
+</menu>
