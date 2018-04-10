@@ -5,6 +5,6 @@
         android:id="@+id/action_sound"
         android:checked="true"
         android:icon="@drawable/batloa"
-        app:showAsAction="ifRoom"
-        android:title="Sound"/>
+        android:title="Sound"
+        app:showAsAction="ifRoom" />
 </menu>
