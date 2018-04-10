@@ -47,7 +47,7 @@ public class SuKien_Adapter extends BaseAdapter {
         TextView tv_NgayDang = view.findViewById(R.id.tv_ngaydangbai);
         TextView tv_NoiDungMau = view.findViewById(R.id.tv_noidungmau);
         ImageView imv_sukien = view.findViewById(R.id.imv_baiviet);
-
+        //baiviet
         BaiViet baiViet = (BaiViet) getItem(i);
         tv_TieuDe.setText(baiViet.TieuDe);
         tv_NgayDang.setText(baiViet.NgayDang);
