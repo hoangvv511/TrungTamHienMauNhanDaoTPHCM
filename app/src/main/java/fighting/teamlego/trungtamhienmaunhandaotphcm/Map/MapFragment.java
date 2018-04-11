@@ -217,7 +217,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Directi
         }
     }
 
-
     @Override
     public boolean onMyLocationButtonClick() {
         Toast.makeText(getActivity(), "MyLocation button clicked", Toast.LENGTH_SHORT).show();
