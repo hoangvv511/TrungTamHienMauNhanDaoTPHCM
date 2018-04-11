@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -34,7 +35,7 @@ public class FragmentSlider extends Fragment { // implements View.OnTouchListene
                              Bundle savedInstanceState) {
         imageUrls = getArguments().getString(ARG_PARAM1);
 
-        Uri uri = Uri.parse("android.resource://fighting.teamlego.hoichuthapdobinhduong/drawable/" + imageUrls);
+        Uri uri = Uri.parse("android.resource://fighting.teamlego.trungtamhienmaunhandaotphcm/drawable/"+imageUrls);
 
         View view = inflater.inflate(R.layout.fragment_slider_item, container, false);
         ImageView img = (ImageView) view.findViewById(R.id.img);
@@ -43,7 +44,7 @@ public class FragmentSlider extends Fragment { // implements View.OnTouchListene
                 .placeholder(R.drawable.trungtam1)
                 .into(img);
 
-//        img.setOnTouchListener(this);
         return view;
     }
+
 }

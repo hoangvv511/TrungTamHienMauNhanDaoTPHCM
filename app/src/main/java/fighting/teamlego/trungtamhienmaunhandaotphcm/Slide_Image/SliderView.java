@@ -23,6 +23,7 @@ public class SliderView extends ViewPager {
         init();
     }
 
+
     private void init() {
         setDurationScroll(DEFAULT_SCROLL_DURATION);
     }
