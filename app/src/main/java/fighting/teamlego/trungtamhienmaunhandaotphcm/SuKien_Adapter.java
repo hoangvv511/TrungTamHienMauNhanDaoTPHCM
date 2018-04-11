@@ -52,13 +52,15 @@ public class SuKien_Adapter extends BaseAdapter {
         tv_TieuDe.setText(baiViet.TieuDe);
         tv_NgayDang.setText(baiViet.NgayDang);
         tv_NoiDungMau.setText(baiViet.NoiDung);
-        if(baiViet.HinhAnh != null) {
-            Picasso.get().load("http:" + baiViet.HinhAnh).into(imv_sukien);
-        }
-        else
+
+        String test = baiViet.HinhAnh.substring(0,4);
+        Boolean test2 = test.equals("http");
+        if(test2 == true)
         {
-            imv_sukien.setEnabled(false);
-            imv_sukien.setVisibility(view.GONE);
+            Picasso.get().load(baiViet.HinhAnh).into(imv_sukien);
+        }
+        else if(test2 == false) {
+            Picasso.get().load("http:" + baiViet.HinhAnh).into(imv_sukien);
         }
         return view;
     }

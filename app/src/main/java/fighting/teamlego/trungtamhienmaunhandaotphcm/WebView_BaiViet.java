@@ -2,6 +2,7 @@ package fighting.teamlego.trungtamhienmaunhandaotphcm;
 
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.KeyEvent;
@@ -36,30 +37,6 @@ public class WebView_BaiViet extends Fragment {
         webView.loadUrl(link);
         webView.setWebViewClient(new WebViewClient());
         return view;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        if(getView() == null){
-            return;
-        }
-
-        getView().setFocusableInTouchMode(true);
-        getView().requestFocus();
-        getView().setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-
-                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
-                    // handle back button's click listener
-                    Toast.makeText(getActivity(), "Hello", Toast.LENGTH_LONG);
-                    return true;
-                }
-                return false;
-            }
-        });
     }
 
 }

@@ -121,6 +121,7 @@ public class CuocThiSangTac_Fragment extends Fragment {
                                     listViewSukien.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                         @Override
                                         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                                            getFragmentManager().popBackStack(null, android.app.FragmentManager.POP_BACK_STACK_INCLUSIVE);
                                             WebView_BaiViet webView_baiViet = new WebView_BaiViet();
                                             Bundle bundle = new Bundle();
                                             bundle.putString("LINK","http://hienmaunhandao.org.vn" + baiVietArrayList.get(i).Link);

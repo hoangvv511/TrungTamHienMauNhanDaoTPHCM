@@ -203,7 +203,6 @@ public class NhomMauVaSucKhoe_Fragment extends Fragment {
                                             }
                                         });
                                     }
-
                                 }
                             }, new Response.ErrorListener() {
                                 @Override

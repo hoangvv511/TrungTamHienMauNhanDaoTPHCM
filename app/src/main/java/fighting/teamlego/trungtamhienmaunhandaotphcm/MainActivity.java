@@ -48,8 +48,9 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         HomeFragment homeFragment = new HomeFragment();
-        FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.content_main, homeFragment, homeFragment.getTag()).commit();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.content_main, homeFragment)
+                .commit();
 
         nhacnen = MediaPlayer.create(MainActivity.this, R.raw.nhacnen);
         nhacnen.start();
@@ -132,6 +133,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        getSupportFragmentManager().popBackStack(null, android.app.FragmentManager.POP_BACK_STACK_INCLUSIVE);
 
         if(id == R.id.nav_home)
         {
